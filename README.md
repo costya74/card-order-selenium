@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/cd6ebfula2cdapcb?svg=true)](https://ci.appveyor.com/project/costya74/card-order-selenium)
