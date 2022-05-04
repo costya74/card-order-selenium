@@ -39,14 +39,14 @@ public class CardOrderTest {
     // Подготовка закончена, далее создаем тесты
     @Test
     public void test() {
-        driver.findElement().sendKeys("Иванов Иван"); // находим элемент
-        driver.findElement().sendKeys("+79021234580");
-        driver.findElement().clic();
-        driver.findElement().clic();
-        String text = driver.findElement().getText();
-        assertEquals("", text);
+        driver.findElement(By.cssSelector("[type=\"text\"]")).sendKeys("Иванов Иван"); // находим элемент
+        driver.findElement(By.cssSelector("[type=\"tel\"]")).sendKeys("+79021234580");
+        driver.findElement(By.cssSelector("[type=\"agreement\"]")).click();
+        driver.findElement(By.tagName("button")).click();
+        String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
+        assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
+        // trim() - удаляет лишние пробелы слева и права
     }
-
 
 }
 
